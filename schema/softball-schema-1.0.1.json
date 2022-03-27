@@ -28,7 +28,7 @@
         "player_id": { "type": "string"},
         "player_first_name": { "type": "string"},
         "player_last_name": { "type": "string"},
-        "player_number": { "type": "integer"},
+        "player_number": { "type": "string"},
         "bats": { "type": "string", "enum": ["L", "R", "B"]},
         "throws": { "type": "string", "enum": ["L", "R"]},
         "teams": {
