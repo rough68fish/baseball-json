@@ -1,8 +1,8 @@
 {
 
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Baseball Schema",
-  "id": "http://github.com/scottcame/baseball-json/schema/baseball-schema-1.0.0.json",
+  "title": "Travel Softball Schema",
+  "id": "http://github.com/rough68fish/travel-softball-json/schema/sfotball-schema-1.0.1.json",
 
   "definitions": {
 
@@ -13,6 +13,10 @@
         "coach_id": { "type": "string"},
         "coach_first_name": { "type": "string"},
         "coach_last_name": { "type": "string"},
+        "teams": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/participation"}
+        }
       },
       "required": ["coach_id"]
     },
@@ -26,7 +30,11 @@
         "player_last_name": { "type": "string"},
         "player_number": { "type": "integer"},
         "bats": { "type": "string", "enum": ["L", "R", "B"]},
-        "throws": { "type": "string", "enum": ["L", "R"]}
+        "throws": { "type": "string", "enum": ["L", "R"]},
+        "teams": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/participation"}
+        }
       },
       "required": ["player_id"]
     },
@@ -65,6 +73,18 @@
         }
       },
       "required": ["team_id"]
+    },
+
+    "participation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "team_id": { "type": "string"},
+        "player_number": { "type": "string"},  
+        "start_date": { "type": "string", "format": "date" },
+        "end_date": { "type": "string", "format": "date" }
+      },
+      "required": ["team_id", "start_date"]
     }
 
   },
