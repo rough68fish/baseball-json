@@ -1,4 +1,10 @@
-### Baseball JSON Schema
+### Softball JSON Schema
+
+This repsoitory contains a JSON schema for representing pitch-by-pich and play-by-play events in a baseball/softball game. Is it from Scott Cames' Baseball schema, but I am updating it to use with Travel Softball. In particular I want to be able to identify players and coaches uniquely across multiple teams and seasons. Due to that there are some changes required. The changes include:
+
+1. Adding a coach object
+1. Adding a team participation object
+1. Adding an array of team participation objects to players and coaches   
 
 This repository contains a JSON schema for representing pitch-by-pitch and play-by-play events in baseball games.
 
